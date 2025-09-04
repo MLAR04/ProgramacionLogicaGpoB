@@ -1,9 +1,4 @@
-
 # Definicion de objetos
-Clientes = {
-
-}
-
 Bancos = {
     "Santander": {
         "Transacciones": ["A plazo", "Rotario"],
