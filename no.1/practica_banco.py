@@ -25,19 +25,24 @@ Bancos = {
     },
 }
 
+#Basicamente revisa si la persona se encuentra en algun banco sin especificar.
 def es_cliente( persona ):
     pass
 
+#Revisa si el input esta en la lista de bancos
 def es_banco( banco ):
     pass
 
+#Revisa si una persona esta en un banco en especifico
 def tiene_cuenta( persona, banco ):
     pass
 
-def puede_generar_perstamo ( banco, prestamo ):
+#Revisa si un banco puede generar un tipo de prestamo
+def banco_puede_generar_perstamo ( banco, prestamo ):
     pass
 
-def recibio_monto_especifico ( banco, prestamo ):
+#Revisa si existe un cargo especifico de una persona en un banco
+def recibio_monto_especifico ( persona, prestamo ):
     pass
 
 
