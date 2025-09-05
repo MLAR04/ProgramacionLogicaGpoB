@@ -1,5 +1,5 @@
 # Definicion de objetos
-Bancos = {
+bancos = {
     "Santander": {
         "Transacciones": ["A plazo", "Rotario"],
         "Clientes": {
@@ -27,15 +27,21 @@ Bancos = {
 
 #Basicamente revisa si la persona se encuentra en algun banco sin especificar.
 def es_cliente( persona ):
-    pass
+    #revisar en tdos los bancos
+    for banco in bancos:
+        if tiene_cuenta(persona, banco):
+            return True
+    
+    return False
 
 #Revisa si el input esta en la lista de bancos
 def es_banco( banco ):
+    return banco in bancos
     pass
 
 #Revisa si una persona esta en un banco en especifico
 def tiene_cuenta( persona, banco ):
-    pass
+    return banco in bancos and persona in bancos[banco]["Clientes"]
 
 #Revisa si un banco puede generar un tipo de prestamo
 def banco_puede_generar_perstamo ( banco, prestamo ):
@@ -46,3 +52,11 @@ def recibio_monto_especifico ( persona, prestamo ):
     pass
 
 
+if __name__ == "__main__":
+    persona = "a"
+    banco = "BanCoppel"
+
+    print(
+        es_banco( banco ),
+        es_banco( persona )
+    )
