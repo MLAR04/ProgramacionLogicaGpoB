@@ -48,15 +48,19 @@ def banco_puede_generar_prestamo ( banco, prestamo ):
 
 #Revisa si existe un cargo especifico de una persona en un banco
 def recibio_monto_especifico ( persona, prestamo ):
-    pass
+    for banco in bancos:
+        if tiene_cuenta(persona, banco):
+            if prestamo in bancos[banco]["Clientes"][persona]["Transacciones"]:
+                return True
+    return False
 
 
 if __name__ == "__main__":
-    persona = "a"
+    persona = "Estevan"
     banco = "BanCoppel"
     prestamo = "Rotario"
 
     print(
-        banco_puede_generar_prestamo(banco, prestamo),
-        banco_puede_generar_prestamo(banco, persona)
+        recibio_monto_especifico(persona, 150),
+        recibio_monto_especifico(persona, 500)
     )
