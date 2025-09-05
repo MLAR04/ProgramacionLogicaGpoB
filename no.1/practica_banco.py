@@ -1,7 +1,7 @@
 # Definicion de objetos
 bancos = {
     "Santander": {
-        "Transacciones": ["A plazo", "Rotario"],
+        "Prestamos": ["A plazo", "Rotario"],
         "Clientes": {
             "Pablo": { "Transacciones" : [200, -300, 400] },
             "Maria": { "Transacciones" : [200, -90, 100] },
@@ -9,14 +9,14 @@ bancos = {
         }
     },
     "Banamex": {
-        "Transacciones": ["A plazo",  "Rotario"],
+        "Prestamos": ["A plazo",  "Rotario"],
         "Clientes": {
             "Juana": { "Transacciones" : [200, -100] },
             "Annyi": { "Transacciones" : [-200, -300, -400, 10] }, 
         }
     },
     "BanCoppel": {
-        "Transacciones": ["A plazo"],
+        "Prestamos": ["A plazo"],
         "Clientes": {
             "Pablo": { "Transacciones" : [200, -300, 400] },
             "Juanita": { "Transacciones" : [2000, -900, 100] },
@@ -37,15 +37,14 @@ def es_cliente( persona ):
 #Revisa si el input esta en la lista de bancos
 def es_banco( banco ):
     return banco in bancos
-    pass
 
 #Revisa si una persona esta en un banco en especifico
 def tiene_cuenta( persona, banco ):
     return banco in bancos and persona in bancos[banco]["Clientes"]
 
 #Revisa si un banco puede generar un tipo de prestamo
-def banco_puede_generar_perstamo ( banco, prestamo ):
-    pass
+def banco_puede_generar_prestamo ( banco, prestamo ):
+    return prestamo in bancos[banco]["Prestamos"] 
 
 #Revisa si existe un cargo especifico de una persona en un banco
 def recibio_monto_especifico ( persona, prestamo ):
@@ -55,8 +54,9 @@ def recibio_monto_especifico ( persona, prestamo ):
 if __name__ == "__main__":
     persona = "a"
     banco = "BanCoppel"
+    prestamo = "Rotario"
 
     print(
-        es_banco( banco ),
-        es_banco( persona )
+        banco_puede_generar_prestamo(banco, prestamo),
+        banco_puede_generar_prestamo(banco, persona)
     )
