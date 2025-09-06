@@ -48,10 +48,12 @@ def prestamos():
 
 def montos_dinero():
     cuentas = {"Alex": "Banamex"}
-    montos = {"Alex": "5000"}
+    montos = {"Alex": 5000}
 
-    def recibio_monto(cliente, monto):
-        return cliente in cuentas and cliente in montos[cliente] == monto
+    def recibio_monto(nombre, monto):
+        if nombre in cuentas:
+            return montos.get(nombre) == monto
+        return False
 
     print("¿Alex recibió 5000?", recibio_monto("Alex", 5000))  
     print("¿Alex recibió 15000?", recibio_monto("Alex", 15000)) 
