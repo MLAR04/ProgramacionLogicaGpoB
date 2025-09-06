@@ -1,5 +1,11 @@
 from universo import Bancos
 
+
+def esBanco(banco):
+    if banco in Bancos:
+        return True
+    return False
+
 def esCliente(banco, persona): # Deuelve si una persona es cliente de una empresa
     if persona in Bancos[banco]["clientes"]:
         return True
@@ -31,6 +37,12 @@ def edadCliente(persona): # Devuelve la edad de una persona
 if __name__ == "__main__":
     persona = "Pedro"
     banco = "BBVA"
+    
+    # ¿'Y' es banco?
+    if esBanco(banco):
+        print("El banco existe.")
+    else:
+        print("El banco no existe.")
     
     # ¿'X' es un cliente?
     try:

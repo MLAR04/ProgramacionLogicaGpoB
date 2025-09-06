@@ -4,8 +4,8 @@
 
 Ejercicios
 - "X" es un cliente.
-HECHO: Juan es un cliente.
-LEY: Los clientes deben ser humanos
+HECHO: Juan es tiene cuenta de banco.
+LEY: Los clientes tiene una cuenta de banco
 CONSULTA: ¿Es Juan cliente? True
 CONSULTA: ¿Pepe es cliente? False
 

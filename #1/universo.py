@@ -27,6 +27,10 @@ Bancos = {
             "Juan": {
                 "monto": 1_000_000,
                 "edad": 25
+            },
+            "María": {
+                "monto": 500_000,
+                "edad": 25
             }
         }, # Clientes
         "Tipo": "Financiera"
