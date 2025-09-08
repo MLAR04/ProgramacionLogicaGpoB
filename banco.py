@@ -9,7 +9,7 @@ bancos = {
     },
 }
 
-# 1. ¿Quienes son clientes?
+# 1. ¿Quienes son clientes?  
 def quienes_son_clientes():
     clientes_list = []
     for banco in bancos: 
