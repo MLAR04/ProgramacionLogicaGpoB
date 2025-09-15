@@ -3,7 +3,7 @@
 ##### practica#2
  
 Desarrolla en python los siguientes ejercicios:
-
+(Nota: en la terminal, utiliza el sig comando para correr los scripts: "Python nombre del archivo.py")
 1. (Suma de parametros no independientes) Desarrollar una funcion suma(a,b), la cual solo deba de depender de dichos parametros: 
 La función recibe dos parametros (a,b), que al sumar los dan el resultado de un parametro R, y al final simplemte se imprime un mensaje que idica que numeros se sumaron y cual fue el resultado 
 
