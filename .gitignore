@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+practica1/
+
 # Distribution / packaging
 .Python
 build/
