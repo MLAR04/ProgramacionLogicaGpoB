@@ -37,7 +37,6 @@ print("Funcion n-esimo numero fibonnaci:", fibonacci(6))
 
 # Ultimo ejercicio
 lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-lista2 = [1, 2, 3, 4, 5]
 
 # Genera una nueva lista con los cuadrados de cada número usando map.
 listaResultados = map(lambda x: x ** 2, lista)
@@ -48,9 +47,9 @@ listaResultados = filter(lambda x: x % 2 == 0, lista)
 print("Obtener numeros pares usando Filter:", list(listaResultados))
 
 # Reduce: La suma de [1..10]
-listaResultados = reduce(lambda x, y: x + y, lista)
-print("Suma 1..10 usando Reduce:", listaResultados)
+Resultado = reduce(lambda x, y: x + y, lista)
+print("Suma 1..10 usando Reduce:", Resultado)
 
 # El producto [1..5]
-listaResultados = reduce(lambda x, y: x * y, lista2)
-print("Producto de 1..5 usando Reduce:", listaResultados)
+Resultado = reduce(lambda x, y: x * y, lista[0:5])
+print("Producto de 1..5 usando Reduce:", Resultado)
