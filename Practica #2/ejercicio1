@@ -1,0 +1,11 @@
+
+""" Ejercicio1: Devuelve la suma de a y b."""
+
+def suma(a, b):
+    return a + b
+
+
+a = int(input("Introduce el primer número para la suma: "))
+b = int(input("Introduce el segundo número para la suma: "))
+
+print(f"La suma de {a} y {b} es: {suma(a, b)}")

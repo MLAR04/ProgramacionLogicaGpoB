@@ -1,0 +1,13 @@
+
+"""Ejercicio 2:Calcula el factorial de n usando recursión."""
+
+def factorial(n):
+    if n == 0 or n == 1:  
+        return 1
+    else: 
+        return n * factorial(n - 1)
+
+
+n = int(input("Introduce un numero para calcular su factorial: "))
+
+print(f"El factorial de {n} es: {factorial(n)}")
