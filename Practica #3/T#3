@@ -1,0 +1,48 @@
+from functools import reduce
+
+# Función suma(a,b)
+
+def suma(a, b):
+    return a + b
+
+print("Ejercicio 1 -> Suma(5,3):", suma(5, 3))
+
+
+# Función recursiva factorial(n)
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print("Ejercicio 2 -> Factorial(5):", factorial(5))
+
+
+# Función recursiva que calcule Fibonacci(n)
+def fibonacci(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+print("Ejercicio 3 -> Fibonacci(8):", fibonacci(8))
+
+
+# Operaciones con lista [1,2,3,4,5,6,7,8,9,10]
+lista = [1,2,3,4,5,6,7,8,9,10]
+
+# Generar lista con cuadrados 
+cuadrados = list(map(lambda x: x**2, lista))
+print("Ejercicio 4.1 -> Cuadrados:", cuadrados)
+
+#Filtrar números 
+pares = list(filter(lambda x: x % 2 == 0, lista))
+print("Ejercicio 4.2 -> Pares:", pares)
+
+# Suma [1..10]
+suma_total = reduce(lambda x, y: x + y, lista)
+print("Ejercicio 4.3a -> Suma de [1..10]:", suma_total)
+
+#Producto [1..5]
+producto = reduce(lambda x, y: x * y, [1,2,3,4,5])
+print("Ejercicio 4.3b -> Producto de [1..5]:", producto)
