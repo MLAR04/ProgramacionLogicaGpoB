@@ -11,7 +11,7 @@ from functools import reduce
 def cuadrado(x):
     return x**2
 
-# 1. Lista de pares
+# 2. Lista de pares
 def pares(x):
     if x % 2 == 0:
         return True
