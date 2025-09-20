@@ -14,27 +14,16 @@
 # F  | V  |    F
 # F  | F  |    F
 
-def es_multiplo_de_2(n):
-    return n % 2 == 0
-
-def es_multiplo_de_3(n):
-    return n % 3 == 0
+def multiplo_de_6(R1, R2   ):
+    return R1 and R2
 
 
 
 if __name__ == "__main__":
-    print(" R1: es multiplo de 2")
-    print(" R2: es multiplo de 3")
+    print(f"{'R1':<6}{'R2':<6}{'R1 AND R2':<10}")
+    print("-" * 25)
 
-    print("Resultado: es múltiplo de 6 (R1 AND R2)\n")
-
-    # Encabezado
-    print(f"{'n':<5}{'R1':<10}{'R2':<10}{'R1 AND R2':<12}")
-    print("-" * 40)
-
-    # Probamos con números del 1 al 12
-    for n in range(1, 13):
-        r1 = es_multiplo_de_2(n)
-        r2 = es_multiplo_de_3(n)
-        r3 = r1 and r2
-        print(f"{n:<5}{str(r1):<10}{str(r2):<10}{str(r3):<12}")
+    for R1 in [False, True]:
+        for R2 in [False, True]:
+            resultado = multiplo_de_6(R1, R2)
+            print(f"{str(R1):<6}{str(R2):<6}{str(resultado):<10}")
