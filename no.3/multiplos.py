@@ -3,7 +3,9 @@
 # R1: es dibilivle entre 3
 #
 # REGLA GRAL
-# es multiplo de 6 si es dibilivle entre 2 y  es dibilivle entre 3
+# es multiplo de 6
+#
+# Rg -> R1 AND R2
 #
 # TABLA DE VERDAD
 # R1 | R2 | es multiplo de 6
