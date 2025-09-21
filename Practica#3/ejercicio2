@@ -1,0 +1,53 @@
+
+#2. Una persona puede votar si tiene más de 18 años, tiene credencial de elector y está en la lista nominal.
+
+def tabla_reducida():
+    print("\nTabla de verdad para (R2 ∧ R3 ∧ R4) → R1\n")
+    print("{:<8}{:<8}{:<8}{:<15}".format("R2", "R3", "R4", "(R2∧R3∧R4)→R1"))
+    print("-" * 45)
+
+    # Filas representativas de la tabla (como en la imagen)
+    casos = [
+        (True,  True,  True),   
+        (False, True,  True),   #
+        (True,  False, True),   # 
+        (True,  True,  False),  
+        (False, False, False)   
+    ]
+
+    for r2, r3, r4 in casos:
+        # Evaluamos la conjunción y la implicación
+        conjuncion = r2 and r3 and r4
+        r1 = conjuncion  
+        implicacion = (not conjuncion) or r1
+
+        print("{:<8}{:<8}{:<8}{:<15}".format(
+            "V" if r2 else "F",
+            "V" if r3 else "F",
+            "V" if r4 else "F",
+            "V" if implicacion else "F"
+        ))
+
+def main():
+    print("=== Evaluación de Voto ===")
+    edad = int(input("Ingrese la edad de la persona: "))
+    credencial = input("¿Tiene credencial de elector? (s/n): ").strip().lower() == "s"
+    lista_nominal = input("¿Está en la lista nominal? (s/n): ").strip().lower() == "s"
+
+    # Condiciones
+    r2 = edad > 18
+    r3 = credencial
+    r4 = lista_nominal
+    r1 = r2 and r3 and r4
+
+    print("\nResultados de la persona:")
+    print(f"R2 (Mayor de 18): {r2}")
+    print(f"R3 (Tiene credencial): {r3}")
+    print(f"R4 (En lista nominal): {r4}")
+    print(f"R1 (¿Puede votar?): {r1}")
+
+    # Mostrar la tabla reducida
+    tabla_reducida()
+
+if __name__ == "__main__":
+    main()

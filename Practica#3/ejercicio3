@@ -1,0 +1,27 @@
+
+#3.Una computadora puede conectarse a internet si tiene Wi-Fi activado
+
+
+
+import itertools
+def tabla_verdad():
+    print(f"{'R2':<3} {'R3':<3} {'R4':<3} {'(R2∨R3)':<8} {'(R2∨R3)∧R4':<12} {'S':<3}")
+    print("-"*40)
+    
+    # Todas las combinaciones posibles de V y F (True/False)
+    for R2, R3, R4 in itertools.product([True, False], repeat=3):
+        # Operaciones lógicas
+        disyuncion = R2 or R3
+        antecedente = disyuncion and R4
+        R1 = antecedente   
+        S = (not antecedente) or R1  
+        
+        # Mostrar en formato V/F
+        print(f"{'V' if R2 else 'F':<3} "
+              f"{'V' if R3 else 'F':<3} "
+              f"{'V' if R4 else 'F':<3} "
+              f"{'V' if disyuncion else 'F':<8} "
+              f"{'V' if antecedente else 'F':<12} "
+              f"{'V' if S else 'F':<3}")
+
+tabla_verdad()

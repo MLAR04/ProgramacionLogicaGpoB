@@ -1,0 +1,49 @@
+
+#1.	Un número es múltiplo de 6 si es divisible entre 2 y divisible entre 3.
+
+
+def es_divisible(num, divisor):
+    return num % divisor == 0
+
+def tabla_de_verdad():
+    print("\nTabla de verdad para (D2 ∧ D3) → M\n")
+    print("{:<8}{:<8}{:<8}{:<8}{:<15}{:<15}".format("D2", "D3", "M", "D2∧D3", "(D2∧D3)→M", "Validez"))
+    print("-" * 70)
+    
+    valores = [True, False]
+    for d2 in valores:
+        for d3 in valores:
+            for m in valores:
+                conjuncion = d2 and d3
+                implicacion = (not conjuncion) or m
+                estado = "Correcto" if implicacion else "Contradicción"
+                print("{:<8}{:<8}{:<8}{:<8}{:<15}{:<15}".format(
+                    "V" if d2 else "F",
+                    "V" if d3 else "F",
+                    "V" if m else "F",
+                    "V" if conjuncion else "F",
+                    "V" if implicacion else "F",
+                    estado
+                ))
+
+def main():
+    numero = int(input("Introduce un número: "))
+    
+    divisible2 = es_divisible(numero, 2)
+    divisible3 = es_divisible(numero, 3)
+    multiplo6 = es_divisible(numero, 6)
+
+    print(f"\nNúmero ingresado: {numero}")
+    print(f"Divisible entre 2: {divisible2}")
+    print(f"Divisible entre 3: {divisible3}")
+    print(f"Es múltiplo de 6: {multiplo6}")
+
+    # Evaluamos la regla lógica
+    cumple_regla = (divisible2 and divisible3) == multiplo6
+    print(f"\n¿Cumple la regla lógica (D2 ∧ D3) ↔ M? {cumple_regla}")
+
+    # Mostrar la tabla de verdad
+    tabla_de_verdad()
+
+if __name__ == "__main__":
+    main()
