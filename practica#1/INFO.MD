@@ -15,3 +15,7 @@ Pensando en un contexto financiero, utiliza la siguiente lista de predicados, po
 - **consultas.py** alberga todas las funciones necesarias para realizar las consultas propuestas en el ejercicio de predicados.
 - **utils.py** alberga una funcion auxiliar para formatear los resultados a una tabla esteticamente mejorada con el uso de la libreria **rich**.
 - **main.py** es el archivo encargado de ejecutar las consultas y presentar los resultados.
+
+## Instalacion de depedencias
+
+- pip install rich

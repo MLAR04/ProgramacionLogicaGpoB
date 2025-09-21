@@ -1,5 +1,5 @@
 # Objetivo:
-Desarrolla en python los siguientes ejercicios:
+Desarrollar en python los siguientes ejercicios:
 
 ## Ejercicios   
 
