@@ -1,0 +1,28 @@
+#1
+def es_multiplo_6(x: int) -> bool:
+    return (x % 2 == 0) and (x % 3 == 0)
+
+#2
+def puede_votar(edad: int, tiene_credencial: bool, en_lista_nominal: bool) -> bool:
+    return (edad > 18) and tiene_credencial and en_lista_nominal
+
+#3
+def puede_conectarse_internet(wifi: bool, ethernet: bool, modem: bool) -> bool:
+    return ((wifi or ethernet) and modem)
+
+#print para consulta
+# 1 multiplo de 6
+print("12 es múltiplo de 6?", es_multiplo_6(12))   
+print("15 es múltiplo de 6?", es_multiplo_6(15))   
+
+#2 votar
+print("Persona de 20 años con credencial y en lista nominal:", 
+      puede_votar(20, True, True))  
+print("Persona de 17 años con credencial y en lista nominal:", 
+      puede_votar(17, True, True))  
+
+#3 conexion a
+print("WiFi activado, módem funcionando:", 
+      puede_conectarse_internet(True, False, True))  
+print("Ni WiFi ni Ethernet, módem funcionando:", 
+      puede_conectarse_internet(False, False, True))
