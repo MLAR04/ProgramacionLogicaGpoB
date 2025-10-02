@@ -18,8 +18,10 @@ Hecho: Migraña ← dolor de cabeza ∧ nauseas
 
 Hecho: Resfriado ← congestion nasal ∧ fiebre ∧ tos
 
+LEY:
 
 Si todos los síntomas de una enfermedad están presentes en el usuario → entonces el diagnostico es esa enfermedad.
+
 
 
 
