@@ -1,5 +1,20 @@
-Utiliza la descomposición de reglas lógicas para descomponer los siguientes predicados:
-Un número es múltiplo de 6 si es divisible entre 2 y divisible entre 3.
-Una persona puede votar si tiene más de 18 años, tiene credencial de elector y está en la lista nominal.
-Una computadora puede conectarse a internet si tiene Wi-Fi activado o cable Ethernet conectado, y además el módem funciona.
-Debe tener las Reglas, Regla General, Tabla de verdad y código en python. (El código va en su rama de GitHub en su respectiva carpeta)
+**Proyecto: Sistema de detección de enfermedades comunes
+
+Base de conocimiento:
+
+Gripe: tos y dolor de cabeza
+
+Covid: Fiebre, tos, cansancio, pérdida del olfato.
+
+Migraña: Dolor de cabeza, náuseas.
+
+Resfriado: Congestión nasal, fiebre y tos.
+
+Hecho: Gripe ← tos ∧ dolor de cabeza
+Hecho: Covid ← fiebre ∧ tos ∧ cansancio ∧ perdida del olfato
+Hecho: Migraña ← dolor de cabeza ∧ nauseas
+Hecho: Resfriado ← congestion nasal ∧ fiebre ∧ tos
+
+
+Si todos los síntomas de una enfermedad están presentes en el usuario → entonces el diagnostico es esa enfermedad.
+**
