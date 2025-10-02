@@ -1,4 +1,4 @@
-**Proyecto: Sistema de detección de enfermedades comunes
+Proyecto: Sistema de detección de enfermedades comunes
 
 Base de conocimiento:
 
@@ -17,4 +17,4 @@ Hecho: Resfriado ← congestion nasal ∧ fiebre ∧ tos
 
 
 Si todos los síntomas de una enfermedad están presentes en el usuario → entonces el diagnostico es esa enfermedad.
-**
+
