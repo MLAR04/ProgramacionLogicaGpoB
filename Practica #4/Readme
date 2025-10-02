@@ -1,0 +1,28 @@
+# Práctica #4  
+## Sistema experto de detección de enfermedades comunes
+
+### Descripción
+En esta práctica se desarrolló un **sistema experto** en Python capaz de diagnosticar enfermedades comunes a partir de los síntomas que presenta un usuario.  
+El sistema utiliza una **base de conocimiento** predefinida vista en clase y un conjunto de **reglas de inferencia** hechas en clase que permiten determinar qué enfermedad se asocia con los síntomas ingresados.
+
+### Base de conocimiento
+El sistema cuenta con la siguiente base de síntomas y enfermedades:
+
+- **Gripe:** tos y dolor de cabeza.  
+- **Covid:** fiebre, tos, cansancio, pérdida del olfato.  
+- **Migraña:** dolor de cabeza y náuseas.  
+- **Resfriado:** congestión nasal, fiebre y tos.  
+
+### Reglas de inferencia
+- Si tienes tos y dolor de cabeza → **Gripe**.  
+- Si tienes fiebre, tos, cansancio y pérdida del olfato → **Covid**.  
+- Si tienes dolor de cabeza y náuseas → **Migraña**.  
+- Si tienes congestión nasal, fiebre y tos → **Resfriado**.  
+
+### Funcionamiento
+1. El programa pregunta al usuario uno por uno si presenta ciertos síntomas.  
+2. El usuario responde con **"si"** o **"no"**.  
+3. Con base en las respuestas, se evalúan las reglas de inferencia.  
+4. El sistema determina la enfermedad más probable.  
+5. Si no se cumple ninguna regla, el sistema indica que no se pudo diagnosticar.
+
