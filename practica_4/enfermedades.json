@@ -1,0 +1,24 @@
+{
+    "enfermedades": {
+        "gripa" : [
+            "dolor_cabeza",
+            "tos"
+            ],
+        "covid": [
+            "cansancio",
+            "fiebre",
+            "perdida_olfato",
+            "tos"
+            ],
+        "migrania" : [
+            "dolor_cabeza",
+            "nauseas"
+        ],
+        "refriado": [
+            "congestion_nasal",
+            "fiebre",
+            "tos"
+        ]
+    }, 
+    "sintomas": ["cansancio", "congestion nasal",  "dolor de cabeza", "fiebre", "nauseas", "perdida de olfato", "tos"]
+}
