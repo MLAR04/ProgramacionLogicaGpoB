@@ -1,4 +1,4 @@
-# Proyecto: Sistema de detección de enfermedades comunes
+#  Sistema de detección de enfermedades comunes
 def main():
     enfermedades = {
         "gripe": ["tos","dolor de cabeza"], 
@@ -23,3 +23,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
