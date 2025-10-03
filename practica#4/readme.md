@@ -1,4 +1,4 @@
-x# Practica No.4
+# Practica No.4
 
 ## Detector de Enfermedades
 
