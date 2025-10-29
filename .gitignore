@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Ignorar un archivo específico
+ejemplo/
+
 # C extensions
 *.so
 
