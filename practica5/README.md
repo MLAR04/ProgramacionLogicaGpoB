@@ -1,15 +1,15 @@
-# Proyecto: Sistema de Evaluación de Conocimientos
+# Practica: Clausulas de horn
 
 ## Equipo
 **Nombre del equipo:** Educación
 
 ## Descripción
-Este proyecto tiene como objetivo implementar un sistema de conocimiento basado en reglas (cláusulas de Horn) para evaluar si un usuario necesita reforzar ciertos temas en función de sus respuestas a preguntas específicas.
+Tiene como objetivo implementar un sistema de conocimiento basado en reglas (cláusulas de Horn) para evaluar si un usuario necesita reforzar ciertos temas en función de sus respuestas a preguntas específicas y evaluar si un subtema pertenece a un tema.
 
 ---
 
 ## Hechos
-Se definen los temas, subtemas y las respuestas correctas para las preguntas correspondientes:
+Se definen los temas, subtemas y las respuestas correctas para las funciones correspondientes:
 
 ```python
 hechos = {
