@@ -1,23 +1,29 @@
-# 🧠 Sistema de Inferencia para Turismo Inteligente
+#  Sistema de Inferencia para Turismo Inteligente
 
-## 🔹 Introducción o Descripción General
+##  Introducción o Descripción General
 
-### 📌 Propósito del sistema
+###  Propósito del sistema
 El presente proyecto implementa un **motor de inferencia para recomendaciones turísticas**, desarrollado en **Python** utilizando el framework **FastAPI**.  
 Su propósito es **sugerir hoteles y actividades turísticas** basándose en información geográfica, preferencias del usuario (presupuesto, ciudad, tipo de actividad) y etiquetas asociadas a cada hotel o lugar.
 
 El sistema actúa como una **API inteligente** capaz de analizar datos (hechos) y aplicar reglas lógicas (inferencia) para determinar los hoteles más adecuados y las actividades cercanas según criterios definidos.
 
-##¿COMO EJECUTARLO?
-COMO SE CORRE:
+##
+
+¿COMO EJECUTARLO?
+
 1.-primero en terminal vas a escribir:
+
 2.-pip install -r install.txt
+
 3.-despues, en terminal escribir:
+
 4.-uvicorn api:app --reload
+
 5.-luego entrar al url que te dice
 
 
-### 🧭 Tipo de inferencia
+###  Tipo de inferencia
 El sistema utiliza una **inferencia hacia adelante (forward chaining)**.  
 Esto significa que parte de los **hechos existentes** (hoteles, precios, coordenadas, etiquetas, etc.) y **aplica reglas de filtrado** definidas en el motor lógico (`logic.py`) para **deducir nuevos hechos** o resultados (por ejemplo, qué hoteles cumplen con el presupuesto y las preferencias del usuario).
 
@@ -27,7 +33,7 @@ En el proceso:
 3. El motor lógico aplica las reglas de inferencia para filtrar resultados válidos.  
 4. La API devuelve la lista de hoteles o actividades que cumplen esas condiciones.
 
-### 🌍 Alcance y limitaciones
+###  Alcance y limitaciones
 **Alcance:**
 - Permite consultar hoteles por ciudad, presupuesto y etiquetas.
 - Calcula distancias geográficas reales entre hoteles y actividades.
@@ -40,7 +46,7 @@ En el proceso:
 - Las reglas de inferencia están definidas de forma explícita en código (no dinámicas).
 - El sistema no actualiza hechos automáticamente; requiere reinicio para incorporar nuevos datos.
 ---
-⚙️ Lógica de Inferencia (Reglas y Filtros) 
+ Lógica de Inferencia (Reglas y Filtros) 
 El motor utiliza una lógica de Inferencia Hacia Adelante (Forward Chaining) basada en filtros secuenciales:
 
 Filtro de Ciudad (Si se proporciona el parámetro ciudad). 
@@ -59,14 +65,14 @@ Filtro de Tags: El hotel pasa si cumple:tags_incluir: Debe contener TODOS los ta
 
 
 --
-## 🧩 Base de Conocimientos
+##  Base de Conocimientos
 
 La base de conocimientos del sistema está constituida por **hechos y reglas** que permiten realizar inferencias sobre los datos turísticos.
 
-### 🧱 Hechos
+###  Hechos
 Los **hechos** se encuentran definidos en el archivo `data.py` e incluyen dos estructuras principales:
 
-#### 1️⃣ Hoteles
+####  Hoteles
 Cada hotel tiene los siguientes atributos:
 - `id`: Identificador único.  
 - `nom`: Nombre del hotel.  
