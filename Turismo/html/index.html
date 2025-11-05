@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Turismo</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+    <body>
+    <h1>Turismo</h1>
+    <p class="muted">Define tu presupuesto y filtra hospedajes por ciudad y tags; luego elige uno y explora el mapa.</p>
+    <div class="grid">
+        <div class="card">
+            <h3>1) Presupuesto y filtros (pre-hotel)</h3>
+            <div class="row">
+                <label>Presupuesto (MXN)</label>
+                <input id="presupuesto" type="number" min="0" placeholder="vacío = sin límite" />
+                <select id="modo">
+                    <option value="por_noche">Por noche</option>
+                    <option value="por_semana">Por semana</option>
+                    <option value="total_viaje">Total del viaje</option>
+                </select>
+                <input id="noches" type="number" min="1" value="3" style="display:none" />
+            </div>
+
+            <div class="row">
+                <label>Ciudad</label>
+                <select id="ciudad"><option value="">Todas</option></select>
+                <button id="aplicarFiltros" title="Actualizar manualmente">Aplicar</button>
+            </div>
+
+            <h4>Tags de estadía</h4>
+            <div class="row" id="hotelTags"></div>
+            <div class="list" id="listaHoteles"></div>
+        </div>
+
+        <div class="card">
+            <h3>2) Mapa</h3>
+            <div class="row" id="typeChips"></div>
+            <p class="muted" id="hotelSel">Elige un hotel para ver actividades cercanas.</p>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="/static/app.js"></script>
+    </body>
+</html>

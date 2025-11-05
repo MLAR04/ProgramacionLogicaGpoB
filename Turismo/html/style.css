@@ -1,0 +1,91 @@
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    margin: 16px;
+}
+.grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 1000px){
+    .grid {
+        grid-template-columns: 360px 1fr;
+    }
+}
+.card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px;
+}
+.row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.row > * {
+    margin: 4px 0;
+}
+input, select, button {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+}
+button {
+    cursor: pointer;
+}
+#map {
+    height: 70vh;
+    border-radius: 12px;
+}
+
+.chip {
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 10px;
+    border:1px solid #e5e7eb;
+    border-radius:999px;
+    cursor:pointer;
+    user-select:none;
+}
+.chip.include {
+    background:#dcfce7;
+    border-color:#86efac;
+}
+.chip.exclude {
+    background:#fee2e2;
+    border-color:#fca5a5;
+}
+
+.muted {
+    color:#64748b;
+    font-size: .9rem;
+}
+.list {
+    max-height: 30vh;
+    overflow:auto;
+}
+.hotel-item {
+    padding:8px;
+    border-bottom: 1px dashed #e5e7eb;
+    cursor:pointer;
+}
+.hotel-item:hover {
+    background:#f8fafc;
+}
+.hotel-item.selected {
+    background:#e0f2fe;
+    border-color:#38bdf8;
+}
+
+.popup-img {
+    display: block;
+    max-width: 220px;
+    max-height: 140px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 6px;
+    object-fit: cover;
+}
