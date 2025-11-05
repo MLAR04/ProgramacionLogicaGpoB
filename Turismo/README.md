@@ -8,6 +8,15 @@ Su propósito es **sugerir hoteles y actividades turísticas** basándose en inf
 
 El sistema actúa como una **API inteligente** capaz de analizar datos (hechos) y aplicar reglas lógicas (inferencia) para determinar los hoteles más adecuados y las actividades cercanas según criterios definidos.
 
+##¿COMO EJECUTARLO?
+COMO SE CORRE:
+1.-primero en terminal vas a escribir:
+2.-pip install -r install.txt
+3.-despues, en terminal escribir:
+4.-uvicorn api:app --reload
+5.-luego entrar al url que te dice
+
+
 ### 🧭 Tipo de inferencia
 El sistema utiliza una **inferencia hacia adelante (forward chaining)**.  
 Esto significa que parte de los **hechos existentes** (hoteles, precios, coordenadas, etiquetas, etc.) y **aplica reglas de filtrado** definidas en el motor lógico (`logic.py`) para **deducir nuevos hechos** o resultados (por ejemplo, qué hoteles cumplen con el presupuesto y las preferencias del usuario).
