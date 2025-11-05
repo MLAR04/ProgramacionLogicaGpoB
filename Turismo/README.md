@@ -42,7 +42,14 @@ El hotel pasa solo si su costo_calculado (basado en modo/noches) es $\le$ presup
 Filtro de Tags: El hotel pasa si cumple:tags_incluir: Debe contener TODOS los tags solicitados (AND lógico).tags_excluir: No debe contener NINGÚN tag de la lista (NOT ANY lógico).Los hoteles que superan los filtros se ordenan finalmente por costo_calculado de menor a mayor.
 
 ---
+## Casos prueba
+<img width="1918" height="978" alt="image" src="https://github.com/user-attachments/assets/5ca77bf4-73cf-4dcf-b922-7c0430b7a4a0" />
 
+<img width="1913" height="963" alt="image" src="https://github.com/user-attachments/assets/fab42ec5-f328-4a55-b53b-dfbe40b09773" />
+
+
+
+--
 ## 🧩 Base de Conocimientos
 
 La base de conocimientos del sistema está constituida por **hechos y reglas** que permiten realizar inferencias sobre los datos turísticos.
@@ -62,6 +69,8 @@ Cada hotel tiene los siguientes atributos:
 Ejemplo:
 ```python
 {"id": "h_001", "nom": "Hotel Bahía Azul", "ciudad": "Tijuana", "lat": 32.5149, "lon": -117.0382, "precio_noche": 1200.0, "tags": ["familiar", "playa", "pet"]}
+
+
 
 
 
