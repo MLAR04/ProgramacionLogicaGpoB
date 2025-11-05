@@ -1,125 +1,56 @@
-# 🌎 Proyecto Turismo – API con FastAPI
+# 🧠 Sistema de Inferencia para Turismo Inteligente
 
-Este proyecto implementa una **API REST** para un sistema de turismo que permite consultar hoteles, lugares turísticos y actividades cercanas según ubicación, tipo de lugar y presupuesto.  
-Está desarrollado con **Python 3**, **FastAPI** y **Uvicorn**, e incluye datos simulados de hoteles y puntos de interés.
+## 🔹 Introducción o Descripción General
+
+### 📌 Propósito del sistema
+El presente proyecto implementa un **motor de inferencia para recomendaciones turísticas**, desarrollado en **Python** utilizando el framework **FastAPI**.  
+Su propósito es **sugerir hoteles y actividades turísticas** basándose en información geográfica, preferencias del usuario (presupuesto, ciudad, tipo de actividad) y etiquetas asociadas a cada hotel o lugar.
+
+El sistema actúa como una **API inteligente** capaz de analizar datos (hechos) y aplicar reglas lógicas (inferencia) para determinar los hoteles más adecuados y las actividades cercanas según criterios definidos.
+
+### 🧭 Tipo de inferencia
+El sistema utiliza una **inferencia hacia adelante (forward chaining)**.  
+Esto significa que parte de los **hechos existentes** (hoteles, precios, coordenadas, etiquetas, etc.) y **aplica reglas de filtrado** definidas en el motor lógico (`logic.py`) para **deducir nuevos hechos** o resultados (por ejemplo, qué hoteles cumplen con el presupuesto y las preferencias del usuario).
+
+En el proceso:
+1. Se leen los datos base (hechos) desde `data.py`.  
+2. El usuario ingresa parámetros como presupuesto, ciudad o etiquetas.  
+3. El motor lógico aplica las reglas de inferencia para filtrar resultados válidos.  
+4. La API devuelve la lista de hoteles o actividades que cumplen esas condiciones.
+
+### 🌍 Alcance y limitaciones
+**Alcance:**
+- Permite consultar hoteles por ciudad, presupuesto y etiquetas.
+- Calcula distancias geográficas reales entre hoteles y actividades.
+- Sugiere actividades cercanas en un radio configurable (por defecto, 5 km).
+- Compatible con aplicaciones web mediante CORS.
+
+**Limitaciones:**
+- La base de conocimientos es estática (almacenada localmente en `data.py`).
+- No incluye persistencia en base de datos ni aprendizaje automático.
+- Las reglas de inferencia están definidas de forma explícita en código (no dinámicas).
+- El sistema no actualiza hechos automáticamente; requiere reinicio para incorporar nuevos datos.
 
 ---
 
-## 🚀 Características principales
+## 🧩 Base de Conocimientos
 
-- Listado de **hoteles** con información de ciudad, precio, etiquetas y coordenadas.
-- Consulta de **actividades cercanas** a un hotel dentro de un radio configurable.
-- Filtros dinámicos por:
-  - Presupuesto
-  - Ciudad
-  - Etiquetas de hotel
-  - Tipos de actividad
-- Cálculo de **distancias geográficas** usando la fórmula de Haversine.
-- API totalmente compatible con **CORS** para acceso desde aplicaciones web.
-- Servidor de contenido estático (carpeta `/html`).
+La base de conocimientos del sistema está constituida por **hechos y reglas** que permiten realizar inferencias sobre los datos turísticos.
 
----
+### 🧱 Hechos
+Los **hechos** se encuentran definidos en el archivo `data.py` e incluyen dos estructuras principales:
 
-## 📁 Estructura del proyecto
+#### 1️⃣ Hoteles
+Cada hotel tiene los siguientes atributos:
+- `id`: Identificador único.  
+- `nom`: Nombre del hotel.  
+- `ciudad`: Ciudad donde se ubica.  
+- `lat`, `lon`: Coordenadas geográficas.  
+- `precio_noche`: Precio promedio por noche.  
+- `tags`: Lista de etiquetas (por ejemplo: “familiar”, “negocios”, “romántico”).  
 
-├── api.py # Archivo principal con los endpoints de la API
-├── config.py # Configuración general: tipos de lugares, etiquetas, distancias
-├── data.py # Datos simulados de hoteles y lugares turísticos
-├── logic.py # Lógica de filtrado, distancia y validaciones
-├── install.txt # Dependencias del proyecto (FastAPI y Uvicorn)
-└── html/ # Carpeta para archivos estáticos (HTML, imágenes, etc.)
+Ejemplo:
+```python
+{"id": "h_001", "nom": "Hotel Bahía Azul", "ciudad": "Tijuana", "lat": 32.5149, "lon": -117.0382, "precio_noche": 1200.0, "tags": ["familiar", "playa", "pet"]}
 
-
----
-
-## ⚙️ Instalación
-
-### 1️⃣ Requisitos
-- Python 3.8 o superior
-- pip instalado
-
-### 2️⃣ Instalación de dependencias
-Ejecuta el siguiente comando en la raíz del proyecto:
-
-```bash
-pip install -r install.txt
-
-
-## ▶️ Ejecución
-
-Inicia el servidor con:
-
-uvicorn api:app --reload
-
-
-Luego abre tu navegador en:
-
-http://127.0.0.1:8000
-
-
-La documentación interactiva (Swagger UI) estará disponible en:
-
-http://127.0.0.1:8000/docs
-
-## 💡 Ejemplo de uso
-Filtrar hoteles (POST /hoteles/filtrados)
-
-Cuerpo del request (JSON):
-
-{
-  "presupuesto": 1200,
-  "modo": "por_noche",
-  "ciudad": "Tijuana",
-  "tags_incluir": ["familiar"],
-  "tags_excluir": ["negocios"]
-}
-
-
-Respuesta:
-
-[
-  {
-    "id": "h_001",
-    "nom": "Hotel Bahía Azul",
-    "ciudad": "Tijuana",
-    "precio_noche": 1200.0,
-    "costo_calculado": 1200.0,
-    "tags": ["familiar", "playa", "pet"],
-    "lat": 32.5149,
-    "lon": -117.0382
-  }
-]
-
-## 🧩 Archivos principales
-logic.py
-
-Contiene las funciones que calculan distancias, filtran hoteles y aplican reglas de coincidencia de etiquetas.
-
-config.py
-
-Define las constantes globales del sistema:
-
-DEFAULT_DIST → distancia por defecto (km)
-
-PLACE_TYPE → tipos de actividades (con emojis)
-
-HOTEL_TAGS → categorías para los hoteles
-
-data.py
-
-Incluye listas de:
-
-Hoteles → nombre, ciudad, coordenadas, precio y etiquetas
-
-Lugares → tipo, ubicación y nivel de precio
-
-##🧠 Funcionalidades técnicas destacadas
-
-Cálculo geográfico: utiliza la fórmula Haversine para medir distancia entre dos puntos (lat/lon).
-
-Filtros personalizados: los usuarios pueden incluir o excluir etiquetas para refinar los resultados.
-
-Estructura modular: permite fácilmente reemplazar los datos estáticos por una base de datos real en el futuro.
-
-FastAPI CORS: compatible con cualquier frontend o cliente HTTP.
 
