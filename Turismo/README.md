@@ -60,7 +60,8 @@ Filtro de Tags: El hotel pasa si cumple:tags_incluir: Debe contener TODOS los ta
 ## Casos prueba
 <img width="1918" height="978" alt="image" src="https://github.com/user-attachments/assets/5ca77bf4-73cf-4dcf-b922-7c0430b7a4a0" />
 
-<img width="1913" height="963" alt="image" src="https://github.com/user-attachments/assets/fab42ec5-f328-4a55-b53b-dfbe40b09773" />
+<img width="1397" height="839" alt="image" src="https://github.com/user-attachments/assets/87650129-5095-4136-a970-938f8970f947" />
+
 
 
 
