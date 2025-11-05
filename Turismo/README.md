@@ -30,6 +30,16 @@ En el proceso:
 - No incluye persistencia en base de datos ni aprendizaje automático.
 - Las reglas de inferencia están definidas de forma explícita en código (no dinámicas).
 - El sistema no actualiza hechos automáticamente; requiere reinicio para incorporar nuevos datos.
+---
+⚙️ Lógica de Inferencia (Reglas y Filtros) 
+El motor utiliza una lógica de Inferencia Hacia Adelante (Forward Chaining) basada en filtros secuenciales:
+
+Filtro de Ciudad (Si se proporciona el parámetro ciudad). 
+
+Filtro de Costo (Si se proporciona el presupuesto): 
+El hotel pasa solo si su costo_calculado (basado en modo/noches) es $\le$ presupuesto.
+
+Filtro de Tags: El hotel pasa si cumple:tags_incluir: Debe contener TODOS los tags solicitados (AND lógico).tags_excluir: No debe contener NINGÚN tag de la lista (NOT ANY lógico).Los hoteles que superan los filtros se ordenan finalmente por costo_calculado de menor a mayor.
 
 ---
 
@@ -52,5 +62,7 @@ Cada hotel tiene los siguientes atributos:
 Ejemplo:
 ```python
 {"id": "h_001", "nom": "Hotel Bahía Azul", "ciudad": "Tijuana", "lat": 32.5149, "lon": -117.0382, "precio_noche": 1200.0, "tags": ["familiar", "playa", "pet"]}
+
+
 
 
