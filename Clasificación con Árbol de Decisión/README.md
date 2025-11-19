@@ -1,6 +1,6 @@
 # README 
 
-## Opinión sobre los resultados
+##  resultados
 
 Los resultados del modelo fueron buenos.\
 Con un arbol pequeño (por ejemplo, `max_depth=2`), las reglas son
@@ -15,7 +15,7 @@ son coherentes.
 
  el dataset del vino funciona bien con un árbol de decisión.
 
-### ¿Por qué sí?
+### ¿Por que?
 
 -   Todas las características son numéricas y fáciles de dividir con
     reglas.
