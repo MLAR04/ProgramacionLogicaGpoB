@@ -30,7 +30,7 @@ Profundidad Limitada (max_depth=2 o 3): Las reglas generadas son cortas y compre
 Sin Límite de Profundidad (max_depth=None): El árbol crece mucho más. Aunque la precisión en entrenamiento puede ser perfecta, las reglas se vuelven complejas y difíciles de interpretar, corriendo el riesgo de "sobreajuste" (memorizar los datos en lugar de aprender patrones generales) .
 
 
-##¿La base de conocimiento cumple con los requerimientos para utilizarse en un modelo de árbol de decisiones?
+## ¿La base de conocimiento cumple con los requerimientos para utilizarse en un modelo de árbol de decisiones?
 
 Respuesta: SÍ.
 Justificación:El dataset cumple con los tres pilares necesarios para este algoritmo:
