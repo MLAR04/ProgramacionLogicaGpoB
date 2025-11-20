@@ -22,12 +22,9 @@ Ejecuta el siguiente comando en tu terminal para instalar las dependencias:
 
 Al realizar las pruebas con diferentes profundidades (max_depth), observé lo siguiente:
 
-
 Precisión del modelo: El modelo consiguió una precisión muy alta (generalmente superior al 90%) en los datos de prueba. Esto indica que las características químicas son excelentes predictores para distinguir el tipo de vino.
 
-
 Profundidad Limitada (max_depth=2 o 3): Las reglas generadas son cortas y comprensibles. Por ejemplo, el árbol suele preguntar primero por la "prolina" o los "flavonoides". Es fácil seguir la lógica humana.
-
 
 Sin Límite de Profundidad (max_depth=None): El árbol crece mucho más. Aunque la precisión en entrenamiento puede ser perfecta, las reglas se vuelven complejas y difíciles de interpretar, corriendo el riesgo de "sobreajuste" (memorizar los datos en lugar de aprender patrones generales) .
 
