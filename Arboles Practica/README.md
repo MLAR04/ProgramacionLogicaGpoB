@@ -33,6 +33,9 @@ Sin Límite de Profundidad (max_depth=None): El árbol crece mucho más. Aunque 
 
 Respuesta: SÍ.
 Justificación:El dataset cumple con los tres pilares necesarios para este algoritmo:
+
 Datos Etiquetados: Contamos con la variable objetivo ya definida (la clase de vino), lo cual es indispensable para el aprendizaje supervisado.
+
 Variables Informativas: Las características son numéricas y continuas, lo que permite al árbol establecer cortes lógicos (umbrales matemáticos como $\le$ o $>$) para separar las clases eficientemente.
+
 Naturaleza del Problema: El problema es de clasificación (categorías discretas), que es la función natural de un DecisionTreeClassifier 6.
